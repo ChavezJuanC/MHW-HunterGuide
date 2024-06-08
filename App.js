@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "./screens/HomeScreen";
-import AboutScreen from "./screens/AboutScreen";
+import MonstersScreen from "./screens/MonsterScreen";
 
 export default function App() {
     const Stack = createNativeStackNavigator();
@@ -9,8 +9,12 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="About" component={AboutScreen} />
+                <Stack.Screen
+                    name="Home"
+                    component={HomeScreen}
+                    options={{ title: "HunterMate" }}
+                />
+                <Stack.Screen name="Monsters" component={MonstersScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );
