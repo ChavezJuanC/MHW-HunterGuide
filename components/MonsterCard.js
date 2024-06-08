@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function MonsterCard({ monsterName, type }) {
     const navigation = useNavigation();
+
     return (
         <Pressable
             style={styles.monsterContainer}

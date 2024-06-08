@@ -1592,6 +1592,7 @@
         "species": "brute wyvern",
         "elements": ["fire"],
         "name": "Anjanath",
+        "photoURI": "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/anjanath-monster-hunter-world-large-monster.jpg",
         "description": "The Anjanath patrols the Ancient Forest, looking for its favorite meal, Aptonoth. This belligerent monster will attack anything without hesitation.",
         "ailments": [
             {
@@ -7234,7 +7235,7 @@
         "species": "relict",
         "elements": [],
         "name": "Ancient Leshen",
-        "photoURI" : "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/ancient_leshen_mhw.png",
+        "photoURI": "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/ancient_leshen_mhw.png",
         "description": "An old leshen that arrived through a portal to assume control over the Ancient Forest. Sometimes revered as an indigenous deity.",
         "ailments": [
             {

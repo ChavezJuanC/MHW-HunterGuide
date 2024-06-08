@@ -1,8 +1,15 @@
 import { View, StyleSheet, Image, Text } from "react-native";
 import { useLayoutEffect } from "react";
+import monsterData from "../data/MonsterData.json";
 
 export default function MonsterDetailsScreen({ route, navigation }) {
     const { monsterName } = route.params;
+
+    const specificData = monsterData.filter(
+        (item) => item.name === monsterName
+    );
+
+    const Monster = specificData[0];
 
     useLayoutEffect(() => {
         navigation.setOptions({
@@ -15,7 +22,7 @@ export default function MonsterDetailsScreen({ route, navigation }) {
             <View>
                 <Image
                     source={{
-                        uri: "https://monsterhunterworld.wiki.fextralife.com/file/Monster-Hunter-World/ancient_leshen_mhw.png",
+                        uri: Monster.photoURI || "https://picsum.photos/200",
                     }}
                     style={styles.profileImg}
                 />
