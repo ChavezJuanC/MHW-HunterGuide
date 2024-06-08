@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-export default function MonsterCard({ monsterImg, monsterName, type }) {
+export default function MonsterCard({ monsterName, type }) {
     const navigation = useNavigation();
     return (
         <Pressable
@@ -10,7 +10,6 @@ export default function MonsterCard({ monsterImg, monsterName, type }) {
             onPress={() =>
                 navigation.navigate("Monster Details", {
                     monsterName: monsterName,
-                    monsterImg: monsterImg,
                 })
             }
         >
