@@ -14,7 +14,10 @@ export default function MonstersScreen() {
             <FlatList
                 data={monsterData}
                 renderItem={({ item }) => (
-                    <MonsterCard monsterName={item.name} type={item.species} />
+                    <MonsterCard
+                        monsterName={item.name}
+                        type={item.species}
+                    />
                 )}
                 keyExtractor={(item) => item.id}
                 ListHeaderComponent={() => <View style={{ height: 20 }}></View>}

@@ -1,12 +1,22 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { StyleSheet, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function MonsterCard({ monsterName, type }) {
+export default function MonsterCard({ monsterImg, monsterName, type }) {
+    const navigation = useNavigation();
     return (
-        <View style={styles.monsterContainer}>
+        <Pressable
+            style={styles.monsterContainer}
+            onPress={() =>
+                navigation.navigate("Monster Details", {
+                    monsterName: monsterName,
+                    monsterImg: monsterImg,
+                })
+            }
+        >
             <Text style={styles.nameText}>{monsterName}</Text>
             <Text style={styles.typeText}>{type}</Text>
-        </View>
+        </Pressable>
     );
 }
 
