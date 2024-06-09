@@ -23,14 +23,13 @@ export default function MonsterCard({ monsterName, type }) {
 const styles = StyleSheet.create({
     monsterContainer: {
         height: 50,
-        backgroundColor: "#f5f5f5",
+        backgroundColor: "white",
         borderWidth: 1,
         marginHorizontal: 10,
         borderRadius: 10,
         padding: 10,
         flexDirection: "row",
         justifyContent: "space-between",
-        backgroundColor: "#f9f9f9",
     },
     nameText: {
         fontSize: 16,
