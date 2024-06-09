@@ -1,10 +1,7 @@
 import {
     View,
-    Text,
-    Pressable,
     FlatList,
     StyleSheet,
-    ImageBackground,
 } from "react-native";
 import CategoryCard from "../components/CategoryCard";
 
