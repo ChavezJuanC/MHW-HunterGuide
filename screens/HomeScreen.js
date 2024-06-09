@@ -1,4 +1,11 @@
-import { View, Text, Pressable, FlatList, StyleSheet } from "react-native";
+import {
+    View,
+    Text,
+    Pressable,
+    FlatList,
+    StyleSheet,
+    ImageBackground,
+} from "react-native";
 import CategoryCard from "../components/CategoryCard";
 
 export default function HomeScreen() {
@@ -17,7 +24,9 @@ export default function HomeScreen() {
         <View>
             <FlatList
                 data={categories}
-                renderItem={({ item }) => <CategoryCard category={item.type} cover={item.cover}/>}
+                renderItem={({ item }) => (
+                    <CategoryCard category={item.type} cover={item.cover} />
+                )}
                 keyExtractor={(item) => item.id.toString()}
                 ItemSeparatorComponent={() => (
                     <View style={styles.separator}></View>

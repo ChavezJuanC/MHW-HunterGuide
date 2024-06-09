@@ -17,27 +17,34 @@ export default function CategoryCard({ category, cover }) {
             }}
             style={styles.cardContainer}
         >
-            <ImageBackground
-                source={cover}
-                resizeMode="cover"
-                style={styles.cover}
-            >
-                <View>
+            <View style={styles.innerContainer}>
+                <ImageBackground
+                    source={cover}
+                    resizeMode="cover"
+                    style={styles.cover}
+                    imageStyle={styles.imageStyle}
+                >
                     <Text style={styles.categoryText}>{category}</Text>
-                </View>
-            </ImageBackground>
+                </ImageBackground>
+            </View>
         </Pressable>
     );
 }
 
 const styles = StyleSheet.create({
     cardContainer: {
-        borderWidth: 2,
+        borderWidth: 3,
         borderColor: "black",
         marginHorizontal: 10,
         height: 100,
         backgroundColor: "white",
         borderRadius: 10,
+        overflow: "hidden",
+    },
+    innerContainer: {
+        flex: 1,
+        overflow: "hidden",
+        borderRadius: 7, // Slightly less than the parent to ensure proper fitting
     },
     categoryText: {
         fontSize: 25,
@@ -48,6 +55,9 @@ const styles = StyleSheet.create({
     },
     cover: {
         flex: 1,
-        borderRadius: 10,
+        justifyContent: "center",
+    },
+    imageStyle: {
+        borderRadius: 7, // Same as innerContainer to match the rounded corners
     },
 });

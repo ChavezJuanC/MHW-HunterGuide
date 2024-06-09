@@ -1,8 +1,16 @@
-import { View, StyleSheet, Image, Text, Pressable } from "react-native";
+import {
+    View,
+    StyleSheet,
+    Image,
+    Text,
+    Pressable,
+    ImageBackground,
+} from "react-native";
 import { useLayoutEffect } from "react";
 import monsterData from "../data/MonsterData.json";
 
 export default function MonsterDetailsScreen({ route, navigation }) {
+    const backgroundImg = require("../assets/categoryCards/gray-concrete-wall.jpg");
     const { monsterName } = route.params;
 
     const specificData = monsterData.filter(
@@ -18,66 +26,82 @@ export default function MonsterDetailsScreen({ route, navigation }) {
     }, [navigation, monsterName]);
 
     return (
-        <View>
-            <View>
-                <Image
-                    source={{
-                        uri: Monster.photoURI || "https://picsum.photos/200",
-                    }}
-                    style={styles.profileImg}
-                />
-            </View>
-            <View style={styles.infoView}>
-                <Text style={styles.nameText}>{monsterName}</Text>
-                <Text style={styles.typeText}>type</Text>
-                <View style={styles.descritpionContainer}>
-                    <Text style={styles.descriptionText}>{Monster.description}</Text>
+        <View style={styles.mainView}>
+            <ImageBackground
+                source={backgroundImg}
+                style={styles.backgroundImg}
+            >
+                <View>
+                    <Image
+                        source={{
+                            uri:
+                                Monster.photoURI || "https://picsum.photos/200",
+                        }}
+                        style={styles.profileImg}
+                    />
                 </View>
-                <View style={styles.details}>
-                    <Text style={styles.detailText}>
-                        Species :{" "}
-                        <Text style={styles.detailVaue}>
-                            {Monster.species.toUpperCase()}
+                <View style={styles.infoView}>
+                    <Text style={styles.nameText}>{monsterName}</Text>
+                    <Text style={styles.typeText}>type</Text>
+                    <View style={styles.descritpionContainer}>
+                        <Text style={styles.descriptionText}>
+                            {Monster.description}
                         </Text>
-                    </Text>
-                    <Text style={styles.detailText}>
-                        Locations :{" "}
-                        {Monster.locations.map((element, index) => (
-                            <Text style={styles.detailVaue} key={index}>
-                                {element.name}
-                                {index < Monster.locations.length - 1
-                                    ? ", "
-                                    : "."}
+                    </View>
+                    <View style={styles.details}>
+                        <Text style={styles.detailText}>
+                            Species :{" "}
+                            <Text style={styles.detailVaue}>
+                                {Monster.species.toUpperCase()}
                             </Text>
-                        ))}
-                    </Text>
-                    <Text style={styles.detailText}>
-                        Weakness :{" "}
-                        {Monster.weaknesses.map((element, index) => (
-                            <Text style={styles.detailVaue} key={index}>
-                                {element.element}[
-                                <Text style={styles.stars}>
-                                    {"*".repeat(element.stars)}
+                        </Text>
+                        <Text style={styles.detailText}>
+                            Locations :{" "}
+                            {Monster.locations.map((element, index) => (
+                                <Text style={styles.detailVaue} key={index}>
+                                    {element.name}
+                                    {index < Monster.locations.length - 1
+                                        ? ", "
+                                        : "."}
                                 </Text>
-                                ]
-                                {index < Monster.weaknesses.length - 1
-                                    ? "  "
-                                    : ""}
+                            ))}
+                        </Text>
+                        <Text style={styles.detailText}>
+                            Weakness :{" "}
+                            {Monster.weaknesses.map((element, index) => (
+                                <Text style={styles.detailVaue} key={index}>
+                                    {element.element}[
+                                    <Text style={styles.stars}>
+                                        {"*".repeat(element.stars)}
+                                    </Text>
+                                    ]
+                                    {index < Monster.weaknesses.length - 1
+                                        ? "  "
+                                        : ""}
+                                </Text>
+                            ))}{" "}
+                        </Text>
+                    </View>
+                    <View style={styles.rewardsButton}>
+                        <Pressable>
+                            <Text style={styles.buttonText}>
+                                Monster Rewards
                             </Text>
-                        ))}{" "}
-                    </Text>
+                        </Pressable>
+                    </View>
                 </View>
-                <View style={styles.rewardsButton}>
-                    <Pressable>
-                        <Text style={styles.buttonText}>Monster Rewards</Text>
-                    </Pressable>
-                </View>
-            </View>
+            </ImageBackground>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    mainView: {
+        flex: 1,
+    },
+    backgroundImg: {
+        flex: 1,
+    },
     profileImg: {
         width: 200,
         height: 200,
@@ -106,11 +130,11 @@ const styles = StyleSheet.create({
         padding: 7,
         marginTop: 30,
         borderRadius: 5,
-        backgroundColor: "white"
+        backgroundColor: "white",
     },
     descriptionText: {
         fontSize: 15,
-        fontWeight: "400"
+        fontWeight: "400",
     },
     detailText: {
         fontSize: 18,
