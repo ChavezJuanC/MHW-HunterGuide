@@ -33,7 +33,13 @@ export default function App() {
     return (
         <NavigationContainer>
             <Tab.Navigator>
-                <Tab.Screen name="Home" component={StackNav} />
+                <Tab.Screen
+                    name="HomeTab"
+                    component={StackNav}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
                 <Tab.Screen name="Maps" component={MapsScreen} />
                 <Tab.Screen name="Extra" component={ExtraScreen} />
             </Tab.Navigator>

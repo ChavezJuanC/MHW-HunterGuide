@@ -5,6 +5,7 @@ import {
     Text,
     Pressable,
     ImageBackground,
+    ScrollView,
 } from "react-native";
 import { useLayoutEffect } from "react";
 import monsterData from "../data/MonsterData.json";
@@ -26,7 +27,7 @@ export default function MonsterDetailsScreen({ route, navigation }) {
     }, [navigation, monsterName]);
 
     return (
-        <View style={styles.mainView}>
+        <ScrollView style={styles.mainView}>
             <ImageBackground
                 source={backgroundImg}
                 style={styles.backgroundImg}
@@ -91,7 +92,7 @@ export default function MonsterDetailsScreen({ route, navigation }) {
                     </View>
                 </View>
             </ImageBackground>
-        </View>
+        </ScrollView>
     );
 }
 
