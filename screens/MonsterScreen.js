@@ -9,11 +9,11 @@ export default function MonstersScreen() {
         return 0;
     });
 
-    const backgroundImg = require("../assets/categoryCards/cover.png");
-
     return (
         <View>
-            <ImageBackground source={backgroundImg}>
+            <ImageBackground
+                source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+            >
                 <FlatList
                     data={monsterData}
                     renderItem={({ item }) => (

@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         padding: 10,
         borderRadius: 5,
-        color: "white",
+        color: "#f5f5f5",
     },
     cover: {
         flex: 1,

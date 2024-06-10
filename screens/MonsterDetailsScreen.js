@@ -27,10 +27,14 @@ export default function MonsterDetailsScreen({ route, navigation }) {
     }, [navigation, monsterName]);
 
     return (
-        <ScrollView style={styles.mainView}>
+        <ScrollView
+            style={styles.mainView}
+            contentContainerStyle={styles.scrollViewContent}
+        >
             <ImageBackground
                 source={backgroundImg}
                 style={styles.backgroundImg}
+                resizeMode="cover"
             >
                 <View>
                     <Image
@@ -44,7 +48,7 @@ export default function MonsterDetailsScreen({ route, navigation }) {
                 <View style={styles.infoView}>
                     <Text style={styles.nameText}>{monsterName}</Text>
                     <Text style={styles.typeText}>type</Text>
-                    <View style={styles.descritpionContainer}>
+                    <View style={styles.descriptionContainer}>
                         <Text style={styles.descriptionText}>
                             {Monster.description}
                         </Text>
@@ -52,14 +56,14 @@ export default function MonsterDetailsScreen({ route, navigation }) {
                     <View style={styles.details}>
                         <Text style={styles.detailText}>
                             Species :{" "}
-                            <Text style={styles.detailVaue}>
+                            <Text style={styles.detailValue}>
                                 {Monster.species.toUpperCase()}
                             </Text>
                         </Text>
                         <Text style={styles.detailText}>
                             Locations :{" "}
                             {Monster.locations.map((element, index) => (
-                                <Text style={styles.detailVaue} key={index}>
+                                <Text style={styles.detailValue} key={index}>
                                     {element.name}
                                     {index < Monster.locations.length - 1
                                         ? ", "
@@ -70,7 +74,7 @@ export default function MonsterDetailsScreen({ route, navigation }) {
                         <Text style={styles.detailText}>
                             Weakness :{" "}
                             {Monster.weaknesses.map((element, index) => (
-                                <Text style={styles.detailVaue} key={index}>
+                                <Text style={styles.detailValue} key={index}>
                                     {element.element}[
                                     <Text style={styles.stars}>
                                         {"*".repeat(element.stars)}
@@ -100,8 +104,13 @@ const styles = StyleSheet.create({
     mainView: {
         flex: 1,
     },
+    scrollViewContent: {
+        flexGrow: 1,
+    },
     backgroundImg: {
         flex: 1,
+        width: "100%",
+        height: "100%",
     },
     profileImg: {
         width: 200,
@@ -121,12 +130,11 @@ const styles = StyleSheet.create({
     details: {
         margin: 20,
     },
-
     typeText: {
         fontSize: 15,
         fontWeight: "500",
     },
-    descritpionContainer: {
+    descriptionContainer: {
         borderWidth: 1,
         padding: 7,
         marginTop: 30,
@@ -142,7 +150,7 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         margin: 5,
     },
-    detailVaue: {
+    detailValue: {
         fontWeight: "400",
     },
     stars: {
