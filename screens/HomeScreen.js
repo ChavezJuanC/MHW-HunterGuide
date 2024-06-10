@@ -2,7 +2,7 @@ import { View, FlatList, StyleSheet, ImageBackground } from "react-native";
 import CategoryCard from "../components/CategoryCard";
 
 export default function HomeScreen() {
-    const monstersCover = require("../assets/categoryCards/leatherCover.jpg");
+    const monstersCover = require("../assets/categoryCards/cover.png");
     const categories = [
         { type: "Monsters", id: 1, cover: monstersCover },
         { type: "Weapons", id: 2, cover: monstersCover },

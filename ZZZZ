@@ -1,6 +1,5 @@
-To Do:
 
-create the weapons screen, with weapon components.
+create all layer 2 screens for:
 
-create all other screens
-create layouts for all screens
+Weapons by type ---> element ---> rank 
+Armor by type ---> rank ---> element 
