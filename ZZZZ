@@ -1,7 +1,8 @@
-
 create all layer 2 screens for:
 
-Weapons by type ---> element ---> rank 
-Armor by type ---> rank ---> element 
+Weapons by type ---> element ---> rank
+Armor by type ---> rank ---> element
 
-to transition from element to rank and so on just use buttons, the actual filter logic should be assigned to the rank button dynamically. 
+to transition from element to rank and so on just use buttons, the actual filter logic should be assigned to the rank button dynamically.
+
+The weapon types component should be a component with all types, however when navigating, keep nesting a reference for the final data filter
