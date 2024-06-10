@@ -1,8 +1,8 @@
 import React from "react";
-import { FlatList, ImageBackground, StyleSheet, View } from "react-native";
+import { FlatList, ImageBackground, Pressable, StyleSheet } from "react-native";
 import WeaponCard from "../components/WeaponCard";
 
-export default function WeaponsScreen() {
+export default function WeaponsScreen({ navigation }) {
     const weaponImgs = {
         bow: require("../assets/weapons/bow.png"),
         chargeBlade: require("../assets/weapons/chargeblade.png"),
@@ -20,6 +20,7 @@ export default function WeaponsScreen() {
         swordAndShield: require("../assets/weapons/swordandshield.png"),
     };
 
+    const destination = "Weapon Types";
     const weaponsData = [
         { img: weaponImgs.bow, title: "Bow" },
         { img: weaponImgs.chargeBlade, title: "Charge Blade" },
@@ -38,13 +39,22 @@ export default function WeaponsScreen() {
     ];
 
     return (
-        <ImageBackground source={require("../assets/categoryCards/gray-concrete-wall.jpg")}>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+        >
             <FlatList
                 data={weaponsData}
                 renderItem={({ item }) => (
-                    <View style={styles.cardWrapper}>
+                    <Pressable
+                        style={styles.cardWrapper}
+                        onPress={() =>
+                            navigation.navigate(destination, {
+                                title: item.title,
+                            })
+                        }
+                    >
                         <WeaponCard weaponImg={item.img} title={item.title} />
-                    </View>
+                    </Pressable>
                 )}
                 keyExtractor={(item) => item.title}
                 numColumns={2}
