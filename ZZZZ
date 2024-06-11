@@ -1,15 +1,27 @@
-create all layer 2 screens for:
+NEXT STEPS
 
-Weapons by type ---> element ---> rank
-Armor by type ---> rank ---> element
+create a new screen to display weapons of specific type and element. Click a button that return data for this sword. and navigate to new screen where this data will be displayed.
 
-to transition from element to rank and so on just use buttons, the actual filter logic should be assigned to the rank button dynamically.
+TASKS -
+create WeaponsDisplayScreen.js
+create previewCard
+feed data to new screen
+filter data
+create a FlatList of preview cards inside new screen with data
+style
+create navigation to section below.
 
-The weapon types component should be a component with all types, however when navigating, keep nesting a reference for the final data filter
+create weaponDeatils test screen
+create weaponDeatils screen, feed it data with navigation params and display this data.
+use screen to display:
+Name
+Element
+Attack
+Sharpness
+Matererials
 
+create with test data? style and than feed dynamicaly from route.params obj.
 
+Tadaaaaaaa!
 
-"""""""""""""""""""
-next step we should be able to extract weapon type, element and we are now selecting rank. print that out and set navigation to next screen which shows all (ex: bow, blast, rank, itemsssssss click item and get full name of item and itta data )
-
-ranks
+IF YOU DONT FINISH THIS TONIGHT, U A HOE. AND YOU GOTTA GO BACK TO A CALL CENTER!!!!!!!!!!!!!!!!!!!!!!!!
