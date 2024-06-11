@@ -1,5 +1,6 @@
-import { View, Text } from "react-native";
+import { View, Text, ImageBackground } from "react-native";
 import { useLayoutEffect } from "react";
+import DamageTypes from "../components/DamageTypes";
 
 export default function WeaponTypesScreen({ route, navigation }) {
     const { title } = route.params;
@@ -11,8 +12,10 @@ export default function WeaponTypesScreen({ route, navigation }) {
     }, [navigation, title]);
 
     return (
-        <View>
-            <Text>{title} Types</Text>
-        </View>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+        >
+            <DamageTypes weaponType={title}/>
+        </ImageBackground>
     );
 }

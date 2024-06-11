@@ -6,3 +6,10 @@ Armor by type ---> rank ---> element
 to transition from element to rank and so on just use buttons, the actual filter logic should be assigned to the rank button dynamically.
 
 The weapon types component should be a component with all types, however when navigating, keep nesting a reference for the final data filter
+
+
+
+"""""""""""""""""""
+next step we should be able to extract weapon type, element and we are now selecting rank. print that out and set navigation to next screen which shows all (ex: bow, blast, rank, itemsssssss click item and get full name of item and itta data )
+
+ranks

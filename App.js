@@ -9,6 +9,7 @@ import ExtraScreen from "./screens/ExtraScreen";
 import WeaponsScreen from "./screens/WeaponsScreen";
 import ArmorScreen from "./screens/ArmorScreen";
 import WeaponTypesScreen from "./screens/WeaponTypesScreen";
+import RankScreen from "./screens/RankScreen";
 
 export default function App() {
     const Stack = createNativeStackNavigator();
