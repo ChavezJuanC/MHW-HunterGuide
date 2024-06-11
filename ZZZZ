@@ -4,21 +4,21 @@ create a new screen to display weapons of specific type and element. Click a but
 
 TASKS -
 
--add raw damage options.
-
 create navigation to section below.
 
 create weaponDeatils test screen
 create weaponDeatils screen, feed it data with navigation params and display this data.
 use screen to display:
 Name
-Element
-Attack
-Sharpness
-Matererials
+Elemental Damage; element: damage:
+Attack display : ddd Raw: dddd
+Sharpness : color?
+Crafting: itemss
 
 create with test data? style and than feed dynamicaly from route.params obj.
 
 Tadaaaaaaa!
 
 IF YOU DONT FINISH THIS TONIGHT, U A HOE. AND YOU GOTTA GO BACK TO A CALL CENTER!!!!!!!!!!!!!!!!!!!!!!!!
+
+create specific screen for guns orrrr dynamically render ???
