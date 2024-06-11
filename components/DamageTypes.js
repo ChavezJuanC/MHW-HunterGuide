@@ -6,12 +6,18 @@ import {
     Text,
     Pressable,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const ElementCard = ({ elementImage, elementName, weaponType }) => {
+    const navigation = useNavigation();
+
     return (
         <Pressable
             onPress={() => {
-                console.log(`pressing ${elementName} for ${weaponType}`);
+                navigation.navigate("Weapons Display", {
+                    weaponType: weaponType,
+                    element: elementName,
+                });
             }}
         >
             <View style={styles.elementCard}>
@@ -24,42 +30,47 @@ const ElementCard = ({ elementImage, elementName, weaponType }) => {
 export default function DamageTypes({ weaponType }) {
     const elementsData = [
         {
+            type: "Raw",
+            photo: require("../assets/elements/raw.png"),
+            id: 0,
+        },
+        {
             type: "Blast",
             photo: require("../assets/elements/blast.png"),
-            id: 0,
+            id: 1,
         },
         {
             type: "Dragon",
             photo: require("../assets/elements/dragon.png"),
-            id: 1,
+            id: 2,
         },
-        { type: "Fire", photo: require("../assets/elements/fire.png"), id: 2 },
-        { type: "Ice", photo: require("../assets/elements/ice.png"), id: 3 },
+        { type: "Fire", photo: require("../assets/elements/fire.png"), id: 3 },
+        { type: "Ice", photo: require("../assets/elements/ice.png"), id: 4 },
         {
             type: "Paralysis",
             photo: require("../assets/elements/paralysis.png"),
-            id: 4,
+            id: 5,
         },
         {
             type: "Poison",
             photo: require("../assets/elements/poison.png"),
-            id: 5,
+            id: 6,
         },
         {
             type: "Sleep",
             photo: require("../assets/elements/sleep.png"),
-            id: 6,
+            id: 7,
         },
-        { type: "Stun", photo: require("../assets/elements/stun.png"), id: 7 },
+        { type: "Stun", photo: require("../assets/elements/stun.png"), id: 8 },
         {
             type: "Thunder",
             photo: require("../assets/elements/thunder.png"),
-            id: 8,
+            id: 9,
         },
         {
             type: "Water",
             photo: require("../assets/elements/water.png"),
-            id: 9,
+            id: 10,
         },
     ];
     return (

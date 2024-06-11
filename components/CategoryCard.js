@@ -12,7 +12,6 @@ export default function CategoryCard({ category, cover }) {
     return (
         <Pressable
             onPress={() => {
-                console.log(category);
                 navigation.navigate(category);
             }}
             style={styles.cardContainer}

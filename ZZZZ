@@ -3,12 +3,9 @@ NEXT STEPS
 create a new screen to display weapons of specific type and element. Click a button that return data for this sword. and navigate to new screen where this data will be displayed.
 
 TASKS -
-create WeaponsDisplayScreen.js
-create previewCard
-feed data to new screen
-filter data
-create a FlatList of preview cards inside new screen with data
-style
+
+-add raw damage options.
+
 create navigation to section below.
 
 create weaponDeatils test screen

@@ -13,9 +13,11 @@ export default function WeaponTypesScreen({ route, navigation }) {
 
     return (
         <ImageBackground
-            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")
+            
+            }
         >
-            <DamageTypes weaponType={title}/>
+            <DamageTypes weaponType={title} />
         </ImageBackground>
     );
 }
