@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
         margin: 10,
         borderRadius: 10,
         backgroundColor: "#f5f5f5",
-        overflow: "scroll"
+        overflow: "scroll",
     },
     previewImg: {
         width: 80,

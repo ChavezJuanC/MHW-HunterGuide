@@ -1,8 +1,8 @@
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { Text, StyleSheet, FlatList, Pressable } from "react-native";
 import PreviewCard from "../components/PreviewCard";
 import rawData from "../data/WeaponsData.json";
 
-export default function WeaponsDisplayScreen({ route }) {
+export default function WeaponsDisplayScreen({ route, navigation }) {
     const { weaponType, element } = route.params;
 
     const formatSearchParams = () => {
@@ -68,18 +68,25 @@ export default function WeaponsDisplayScreen({ route }) {
         } else {
             return element.type === weaponName && element.elements.length === 0;
         }
-    }); //maybe turn this into a switch
+    });
 
     return (
         <FlatList
             data={filteredData}
             renderItem={({ item }) => (
-                <View>
+                <Pressable
+                    onPress={() =>
+                        navigation.navigate("Weapon Details", {
+                            dataObject: filteredData,
+                            weaponName: item.name,
+                        })
+                    }
+                >
                     <PreviewCard
-                        imgUri={"https://picsum.photos/100"}
+                        imgUri={item.assets.image}
                         weaponName={item.name}
                     />
-                </View>
+                </Pressable>
             )}
             ListHeaderComponent={() => (
                 <Text style={styles.headerText}>
@@ -90,6 +97,7 @@ export default function WeaponsDisplayScreen({ route }) {
                         : `${weaponType}s`}
                 </Text>
             )}
+            keyExtractor={(item) => item.id}
         />
     );
 }
