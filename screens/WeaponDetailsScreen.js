@@ -7,22 +7,36 @@ export default function WeaponDetailsScreen({ route }) {
 
     return (
         <View style={styles.mainView}>
-            <Image
-                source={{ uri: data.assets.image }}
-                style={styles.weaponImg}
-            />
+            <View style={styles.imageView}>
+                <Image
+                    source={{ uri: data.assets.image }}
+                    style={styles.weaponImg}
+                />
+            </View>
+
             <Text style={styles.nameText}>{data.name}</Text>
             <Image source={{ uri: data.assets.icon }} style={styles.iconImg} />
-            <View>
-                <Text>
-                    Damage: {data.attack.display} +{data.attack.raw}
+            <View style={styles.statsView}>
+                <Text style={styles.damageLabel}>
+                    Damage:
+                    <Text style={styles.damageAmount}>
+                        {data.attack.display}D +{data.attack.raw}R
+                    </Text>
                 </Text>
-                <Text>Damage Type: {data.damageType}</Text>
+                <Text style={styles.damageLabel}>
+                    Damage Type:{" "}
+                    <Text style={styles.damageAmount}>
+                        {data.damageType.toUpperCase()}
+                    </Text>
+                </Text>
                 {data.elements
                     ? data.elements.map((element) => (
-                          <Text>
-                              Element Damage: {element.type}
-                              {`(${element.damage})`}
+                          <Text key={data.id} style={styles.damageLabel}>
+                              Element Damage:
+                              <Text style={styles.damageAmount}>
+                                  {element.type.toUpperCase()}
+                                  {`(${element.damage})`}
+                              </Text>
                           </Text>
                       ))
                     : null}
@@ -37,17 +51,34 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     weaponImg: {
-        width: 250,
-        height: 250,
+        width: 260,
+        height: 260,
     },
     nameText: {
+        margin: 10,
         fontSize: 30,
-        fontWeight: "500",
+        fontWeight: "400",
     },
     iconImg: {
         width: 40,
         height: 40,
     },
-    damageLabel: {},
-    damageAmount: {},
+    damageLabel: {
+        fontSize: 20,
+        fontWeight: "400",
+    },
+    damageAmount: {
+        fontSize: 17,
+        fontWeight: "500",
+        color: "#3da9f0",
+    },
+    statsView: {
+        padding: 10,
+        margin: 20,
+    },
+    imageView: {
+        borderWidth: 2,
+        borderRadius: 10,
+        margin: 20,
+    },
 });

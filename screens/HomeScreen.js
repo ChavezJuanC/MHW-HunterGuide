@@ -7,14 +7,16 @@ export default function HomeScreen() {
         { type: "Monsters", id: 1, cover: monstersCover },
         { type: "Weapons", id: 2, cover: monstersCover },
         { type: "Armor", id: 3, cover: monstersCover },
-        { type: "Meals", id: 4, cover: monstersCover },
-        { type: "Missions", id: 5, cover: monstersCover },
-        { type: "Lore", id: 6, cover: monstersCover },
+        { type: "Ailments", id: 4, cover: monstersCover },
+        { type: "Charms", id: 5, cover: monstersCover },
+        { type: "Decorations", id: 6, cover: monstersCover },
         { type: "More", id: 7, cover: monstersCover },
     ];
 
     return (
-        <ImageBackground source={require("../assets/categoryCards/gray-concrete-wall.jpg")}>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+        >
             <View>
                 <FlatList
                     data={categories}

@@ -1,24 +1,9 @@
-NEXT STEPS
+For amor: 
 
-create a new screen to display weapons of specific type and element. Click a button that return data for this sword. and navigate to new screen where this data will be displayed.
 
-TASKS -
 
-create navigation to section below.
+build ranksScreen 
+low high master
 
-create weaponDeatils test screen
-create weaponDeatils screen, feed it data with navigation params and display this data.
-use screen to display:
-Name
-Elemental Damage; element: damage:
-Attack display : ddd Raw: dddd
-Sharpness : color?
-Crafting: itemss
-
-create with test data? style and than feed dynamicaly from route.params obj.
-
-Tadaaaaaaa!
-
-IF YOU DONT FINISH THIS TONIGHT, U A HOE. AND YOU GOTTA GO BACK TO A CALL CENTER!!!!!!!!!!!!!!!!!!!!!!!!
-
-create specific screen for guns orrrr dynamically render ???
+build ArmorsDisplay screen with armor of each rank. with preview cards.
+buidl ArmorDetails .
