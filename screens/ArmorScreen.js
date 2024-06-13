@@ -8,19 +8,19 @@ export default function ArmorScreen({ navigation }) {
         <View>
             <Pressable
                 style={styles.rankCard}
-                onPress={() => handleNav("Home", { rank: "low" })}
+                onPress={() => handleNav("Armor Display", { rank: "low" })}
             >
                 <Text style={styles.cardText}>Low Rank</Text>
             </Pressable>
             <Pressable
                 style={styles.rankCard}
-                onPress={() => handleNav("Home", { rank: "high" })}
+                onPress={() => handleNav("Armor Display", { rank: "high" })}
             >
                 <Text style={styles.cardText}>High Rank</Text>
             </Pressable>
             <Pressable
                 style={styles.rankCard}
-                onPress={() => handleNav("Home", { rank: "master" })}
+                onPress={() => handleNav("Armor Display", { rank: "master" })}
             >
                 <Text style={styles.cardText}>Master Rank</Text>
             </Pressable>

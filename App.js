@@ -11,6 +11,7 @@ import ArmorScreen from "./screens/ArmorScreen";
 import WeaponTypesScreen from "./screens/WeaponTypesScreen";
 import WeaponsDisplayScreen from "./screens/WeaponsDisplayScreen";
 import WeaponDetailsScreen from "./screens/WeaponDetailsScreen";
+import ArmorsDisplayScreen from "./screens/ArmorsDisplayScreen";
 
 export default function App() {
     const Stack = createNativeStackNavigator();
@@ -38,6 +39,10 @@ export default function App() {
             <Stack.Screen
                 name="Weapon Details"
                 component={WeaponDetailsScreen}
+            />
+            <Stack.Screen
+                name="Armor Display"
+                component={ArmorsDisplayScreen}
             />
         </Stack.Navigator>
     );
