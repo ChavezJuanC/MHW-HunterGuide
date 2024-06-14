@@ -16,6 +16,7 @@ import ArmorDeatailsScreen from "./screens/ArmorDetailsScreen";
 import AilmentsScreen from "./screens/AilmentsScreen";
 import CharmsScreen from "./screens/CharmsScreen";
 import DecorationsScreen from "./screens/DecorationsScreen";
+import MoreScreen from "./screens/MoreScreen";
 
 export default function App() {
     const Stack = createNativeStackNavigator();
@@ -56,7 +57,6 @@ export default function App() {
             <Stack.Screen name="Charms" component={CharmsScreen} />
             <Stack.Screen name="Decorations" component={DecorationsScreen} />
             <Stack.Screen name="More" component={MoreScreen} />
-
         </Stack.Navigator>
     );
 
