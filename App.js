@@ -12,6 +12,10 @@ import WeaponTypesScreen from "./screens/WeaponTypesScreen";
 import WeaponsDisplayScreen from "./screens/WeaponsDisplayScreen";
 import WeaponDetailsScreen from "./screens/WeaponDetailsScreen";
 import ArmorsDisplayScreen from "./screens/ArmorsDisplayScreen";
+import ArmorDeatailsScreen from "./screens/ArmorDetailsScreen";
+import AilmentsScreen from "./screens/AilmentsScreen";
+import CharmsScreen from "./screens/CharmsScreen";
+import DecorationsScreen from "./screens/DecorationsScreen";
 
 export default function App() {
     const Stack = createNativeStackNavigator();
@@ -44,6 +48,15 @@ export default function App() {
                 name="Armor Display"
                 component={ArmorsDisplayScreen}
             />
+            <Stack.Screen
+                name="Armor Details"
+                component={ArmorDeatailsScreen}
+            />
+            <Stack.Screen name="Ailments" component={AilmentsScreen} />
+            <Stack.Screen name="Charms" component={CharmsScreen} />
+            <Stack.Screen name="Decorations" component={DecorationsScreen} />
+            <Stack.Screen name="More" component={MoreScreen} />
+
         </Stack.Navigator>
     );
 
