@@ -16,7 +16,8 @@ export default function CharmsScreen({ navigation }) {
                         }
                     >
                         <PreviewCard
-                            imgUri={{ uri: "https://picsum.photos/200" }}
+                            imgUri={"https://picsum.photos/100"}
+                            weaponName={item.name}
                         />
                     </Pressable>
                 )}

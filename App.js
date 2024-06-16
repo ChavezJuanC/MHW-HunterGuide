@@ -19,6 +19,8 @@ import DecorationsScreen from "./screens/DecorationsScreen";
 import MoreScreen from "./screens/MoreScreen";
 import AilmentDetailsScreen from "./screens/AilmentDetailsScreen";
 import CharmsDetailsScreen from "./screens/CharmsDetailsScreen";
+import DecorationsDisplayScreen from "./screens/DecorationsDisplayScreen";
+import DecorationDetailsScreen from "./screens/DecorationDetailsScreen";
 
 export default function App() {
     const Stack = createNativeStackNavigator();
@@ -66,6 +68,14 @@ export default function App() {
                 component={CharmsDetailsScreen}
             />
             <Stack.Screen name="Decorations" component={DecorationsScreen} />
+            <Stack.Screen
+                name="Decorations Display"
+                component={DecorationsDisplayScreen}
+            />
+            <Stack.Screen
+                name="Decoration Details"
+                component={DecorationDetailsScreen}
+            />
             <Stack.Screen name="More" component={MoreScreen} />
         </Stack.Navigator>
     );

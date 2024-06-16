@@ -10,7 +10,7 @@ export default function AilmentDetailsScreen({ route }) {
     return (
         <View style={styles.mainView}>
             <Image
-                source={{ uri: "https://picsum.photos/200" }}
+                source={{ uri: "https://picsum.photos/400" }}
                 style={styles.img}
             />
             <Text style={styles.name}>{filteredData.name}</Text>

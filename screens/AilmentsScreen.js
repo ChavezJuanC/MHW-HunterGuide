@@ -16,7 +16,7 @@ export default function AilmentsScreen({navigation}) {
                         }
                     >
                         <PreviewCard
-                            imgUri={"https://picsum.photos/200"}
+                            imgUri={"https://picsum.photos/400"}
                             weaponName={item.name}
                         />
                     </Pressable>
