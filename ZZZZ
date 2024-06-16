@@ -1,10 +1,22 @@
-for decoration details use 
+next steps: 
+fine tune design for weapons
+    weaponsDisplay needs a background img also weapon Details
+
+fine tune armor and ranks 
+    they both need a background img
+
+fine tune Ailments, background imgs and background color for description box 
+
+fine tune Charms, needs same changes as above
+
+fine tune Decorations, same steps as other two
 
 
-img
-name 
+Design and Finetune armor
 
-skills label 
-flatlist of skills
+show
+IMG 
+name
+skills in flatlist
     skillName 
-    skillDescription
+    description

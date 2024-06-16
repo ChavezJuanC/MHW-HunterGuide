@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 import DecorationData from "../data/DecorationsData.json";
 
 export default function DecorationDetailsScreen({ route }) {
@@ -13,6 +13,16 @@ export default function DecorationDetailsScreen({ route }) {
                 style={styles.img}
             />
             <Text style={styles.name}>{filteredData.name}</Text>
+            <Text style={styles.skillsText}>Skills</Text>
+            <FlatList
+                data={filteredData.skills}
+                renderItem={({ item }) => (
+                    <View style={styles.skillView}>
+                        <Text style={styles.skillName}>{item.skillName}</Text>
+                        <Text style={styles.skillDes}>{item.description}</Text>
+                    </View>
+                )}
+            />
         </View>
     );
 }
@@ -31,6 +41,30 @@ const styles = StyleSheet.create({
     name: {
         padding: 20,
         fontWeight: "500",
+        fontSize: 23,
+    },
+    skillView: {
+        borderWidth: 1,
+        alignItems: "center",
+        margin: 20,
+        padding: 10,
+        paddingBottom: 20,
+        paddingHorizontal: 20,
+        borderRadius: 5,
+        width: 350
+    },
+    skillsText: {
+        fontWeight: "600",
         fontSize: 22,
+    },
+    skillName: {
+        fontSize: 20,
+        fontWeight: "500",
+        padding: 10,
+        color: "#3da9f0",
+    },
+    skillDes: {
+        fontSize: 18,
+        fontWeight: "400",
     },
 });
