@@ -18,7 +18,7 @@ export default function CharmsDetailsScreen({ route }) {
         return filterdData.ranks.map((element) => {
             return (
                 <View key={element.level}>
-                    <Text style={styles.levelText}>{element.level}</Text>
+                    <Text style={styles.levelText}>Tier -{element.level}</Text>
                     {element.crafting.materials.map((element) => (
                         <Text style={styles.detailsText} key={element.item.id}>
                             {element.item.name} X {element.quantity}
@@ -87,4 +87,3 @@ const styles = StyleSheet.create({
     },
 });
 
-////instead of using flatList create my own list component through mapping.

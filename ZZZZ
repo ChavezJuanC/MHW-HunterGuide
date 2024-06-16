@@ -1,12 +1,10 @@
-For the decorations
+for armor details use 
 
 
-
-display screen with preview card 
-img and namae
-
-
-in details screen 
-img 
+img
 name 
-and a flatlist of skills.
+
+skills label 
+flatlist of skills
+    skillName 
+    skillDescription

@@ -1,8 +1,8 @@
-import { View, Text, FlatList } from "react-native";
+import { Pressable, FlatList } from "react-native";
 import DecorationData from "../data/DecorationsData.json";
 import PreviewCard from "../components/PreviewCard";
 
-export default function DecorationsDisplayScreen({ route, navigate }) {
+export default function DecorationsDisplayScreen({ route, navigation }) {
     const { slots } = route.params;
 
     const filteredData = DecorationData.filter(
@@ -12,14 +12,22 @@ export default function DecorationsDisplayScreen({ route, navigate }) {
         <FlatList
             data={filteredData}
             renderItem={({ item }) => (
-                <PreviewCard
-                    imgUri={"https://picsum.photos/400"}
-                    weaponName={item.name}
-                />
+                <Pressable
+                    onPress={() =>
+                        navigation.navigate("Decoration Details", {
+                            decorationId: item.id,
+                        })
+                    }
+                >
+                    <PreviewCard
+                        imgUri={"https://picsum.photos/400"}
+                        weaponName={item.name}
+                    />
+                </Pressable>
             )}
         />
     );
 }
 
-/*import data, filter data by slots, use that data to create a flatlist of preview cards inside a pressable that navigates
+/* inside a pressable that navigates
 to "Decoration Details" with a decorationId : int */
