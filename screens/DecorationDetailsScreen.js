@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, FlatList } from "react-native";
+import {
+    View,
+    Text,
+    StyleSheet,
+    Image,
+    FlatList,
+    ImageBackground,
+} from "react-native";
 import DecorationData from "../data/DecorationsData.json";
 
 export default function DecorationDetailsScreen({ route }) {
@@ -7,23 +14,32 @@ export default function DecorationDetailsScreen({ route }) {
         (element) => element.id === decorationId
     );
     return (
-        <View style={styles.mainView}>
-            <Image
-                source={{ uri: "https://picsum.photos/400" }}
-                style={styles.img}
-            />
-            <Text style={styles.name}>{filteredData.name}</Text>
-            <Text style={styles.skillsText}>Skills</Text>
-            <FlatList
-                data={filteredData.skills}
-                renderItem={({ item }) => (
-                    <View style={styles.skillView}>
-                        <Text style={styles.skillName}>{item.skillName}</Text>
-                        <Text style={styles.skillDes}>{item.description}</Text>
-                    </View>
-                )}
-            />
-        </View>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+            style={{ height: "100%" }}
+        >
+            <View style={styles.mainView}>
+                <Image
+                    source={{ uri: "https://picsum.photos/400" }}
+                    style={styles.img}
+                />
+                <Text style={styles.name}>{filteredData.name}</Text>
+                <Text style={styles.skillsText}>Skills</Text>
+                <FlatList
+                    data={filteredData.skills}
+                    renderItem={({ item }) => (
+                        <View style={styles.skillView}>
+                            <Text style={styles.skillName}>
+                                {item.skillName}
+                            </Text>
+                            <Text style={styles.skillDes}>
+                                {item.description}
+                            </Text>
+                        </View>
+                    )}
+                />
+            </View>
+        </ImageBackground>
     );
 }
 
@@ -51,7 +67,8 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         paddingHorizontal: 20,
         borderRadius: 5,
-        width: 350
+        width: 350,
+        backgroundColor: "#f5f5f5",
     },
     skillsText: {
         fontWeight: "600",

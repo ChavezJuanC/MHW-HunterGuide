@@ -5,6 +5,7 @@ import {
     StyleSheet,
     FlatList,
     ScrollView,
+    ImageBackground,
 } from "react-native";
 import CharmsData from "../data/CharmsData.json";
 
@@ -30,17 +31,23 @@ export default function CharmsDetailsScreen({ route }) {
     };
 
     return (
-        <ScrollView style={styles.mainView}>
-            <Image
-                source={{ uri: "https://picsum.photos/100" }}
-                style={styles.img}
-            />
-            <Text style={styles.name}>{filterdData.name}</Text>
-            <View style={styles.deatailsView}>
-                <Text style={styles.craftingText}>Crafting Parts</Text>
-                <Materials />
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+        >
+            <View style={{ height: "100%" }}>
+                <ScrollView style={styles.mainView}>
+                    <Image
+                        source={{ uri: "https://picsum.photos/100" }}
+                        style={styles.img}
+                    />
+                    <Text style={styles.name}>{filterdData.name}</Text>
+                    <View style={styles.deatailsView}>
+                        <Text style={styles.craftingText}>Crafting Parts</Text>
+                        <Materials />
+                    </View>
+                </ScrollView>
             </View>
-        </ScrollView>
+        </ImageBackground>
     );
 }
 
@@ -67,6 +74,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         margin: 10,
         paddingBottom: 20,
+        backgroundColor: "#f5f5f5"
     },
     craftingText: {
         fontSize: 22,
@@ -86,4 +94,3 @@ const styles = StyleSheet.create({
         color: "#3da9f0",
     },
 });
-

@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, ImageBackground } from "react-native";
 import AilmentData from "../data/AilmentsData.json";
 
 export default function AilmentDetailsScreen({ route }) {
@@ -8,24 +8,29 @@ export default function AilmentDetailsScreen({ route }) {
     );
 
     return (
-        <View style={styles.mainView}>
-            <Image
-                source={{ uri: "https://picsum.photos/400" }}
-                style={styles.img}
-            />
-            <Text style={styles.name}>{filteredData.name}</Text>
-            <View style={styles.deatailsView}>
-                <Text style={styles.detailsText}>
-                    {filteredData.description}
-                </Text>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+        >
+            <View style={styles.mainView}>
+                <Image
+                    source={{ uri: "https://picsum.photos/400" }}
+                    style={styles.img}
+                />
+                <Text style={styles.name}>{filteredData.name}</Text>
+                <View style={styles.deatailsView}>
+                    <Text style={styles.detailsText}>
+                        {filteredData.description}
+                    </Text>
+                </View>
             </View>
-        </View>
+        </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
     mainView: {
         margin: 20,
+        height: "100%",
     },
     img: {
         borderWidth: 2,
@@ -41,12 +46,13 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     deatailsView: {
+        backgroundColor: "#f5f5f5",
         borderWidth: 1,
         borderRadius: 5,
     },
     detailsText: {
         fontSize: 18,
         fontWeight: "400",
-        padding: 10
+        padding: 10,
     },
 });

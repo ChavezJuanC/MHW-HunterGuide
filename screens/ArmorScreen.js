@@ -1,30 +1,48 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import {
+    View,
+    Text,
+    StyleSheet,
+    Pressable,
+    ImageBackground,
+} from "react-native";
 
 export default function ArmorScreen({ navigation }) {
     const handleNav = (destination, params) => {
         navigation.navigate(destination, params);
     };
     return (
-        <View>
-            <Pressable
-                style={styles.rankCard}
-                onPress={() => handleNav("Armor Display", { rank: "low" })}
-            >
-                <Text style={styles.cardText}>Low Rank</Text>
-            </Pressable>
-            <Pressable
-                style={styles.rankCard}
-                onPress={() => handleNav("Armor Display", { rank: "high" })}
-            >
-                <Text style={styles.cardText}>High Rank</Text>
-            </Pressable>
-            <Pressable
-                style={styles.rankCard}
-                onPress={() => handleNav("Armor Display", { rank: "master" })}
-            >
-                <Text style={styles.cardText}>Master Rank</Text>
-            </Pressable>
-        </View>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+        >
+            <View style={{ height: "100%" }}>
+                <View>
+                    <Pressable
+                        style={styles.rankCard}
+                        onPress={() =>
+                            handleNav("Armor Display", { rank: "low" })
+                        }
+                    >
+                        <Text style={styles.cardText}>Low Rank</Text>
+                    </Pressable>
+                    <Pressable
+                        style={styles.rankCard}
+                        onPress={() =>
+                            handleNav("Armor Display", { rank: "high" })
+                        }
+                    >
+                        <Text style={styles.cardText}>High Rank</Text>
+                    </Pressable>
+                    <Pressable
+                        style={styles.rankCard}
+                        onPress={() =>
+                            handleNav("Armor Display", { rank: "master" })
+                        }
+                    >
+                        <Text style={styles.cardText}>Master Rank</Text>
+                    </Pressable>
+                </View>
+            </View>
+        </ImageBackground>
     );
 }
 

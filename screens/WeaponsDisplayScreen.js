@@ -1,4 +1,10 @@
-import { Text, StyleSheet, FlatList, Pressable } from "react-native";
+import {
+    Text,
+    StyleSheet,
+    FlatList,
+    Pressable,
+    ImageBackground,
+} from "react-native";
 import PreviewCard from "../components/PreviewCard";
 import rawData from "../data/WeaponsData.json";
 
@@ -71,34 +77,36 @@ export default function WeaponsDisplayScreen({ route, navigation }) {
     });
 
     return (
-        <FlatList
-            data={filteredData}
-            renderItem={({ item }) => (
-                <Pressable
-                    onPress={() =>
-                        navigation.navigate("Weapon Details", {
-                            dataObject: filteredData,
-                            weaponName: item.name,
-                        })
-                    }
-                >
-                    <PreviewCard
-                        imgUri={item.assets.image}
-                        weaponName={item.name}
-                    />
-                </Pressable>
-            )}
-            ListHeaderComponent={() => (
-                <Text style={styles.headerText}>
-                    {element}
-                    {" Damage "}
-                    {weaponType.slice(-1) === "s"
-                        ? weaponType
-                        : `${weaponType}s`}
-                </Text>
-            )}
-            keyExtractor={(item) => item.id}
-        />
+        <ImageBackground source={require("../assets/categoryCards/gray-concrete-wall.jpg")}>
+            <FlatList
+                data={filteredData}
+                renderItem={({ item }) => (
+                    <Pressable
+                        onPress={() =>
+                            navigation.navigate("Weapon Details", {
+                                dataObject: filteredData,
+                                weaponName: item.name,
+                            })
+                        }
+                    >
+                        <PreviewCard
+                            imgUri={item.assets.image}
+                            weaponName={item.name}
+                        />
+                    </Pressable>
+                )}
+                ListHeaderComponent={() => (
+                    <Text style={styles.headerText}>
+                        {element}
+                        {" Damage "}
+                        {weaponType.slice(-1) === "s"
+                            ? weaponType
+                            : `${weaponType}s`}
+                    </Text>
+                )}
+                keyExtractor={(item) => item.id}
+            />
+        </ImageBackground>
     );
 }
 

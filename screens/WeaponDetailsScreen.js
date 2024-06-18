@@ -1,4 +1,4 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, ImageBackground } from "react-native";
 
 export default function WeaponDetailsScreen({ route }) {
     const { dataObject, weaponName } = route.params;
@@ -6,48 +6,59 @@ export default function WeaponDetailsScreen({ route }) {
     console.log(data);
 
     return (
-        <View style={styles.mainView}>
-            <View style={styles.imageView}>
-                <Image
-                    source={{ uri: data.assets.image }}
-                    style={styles.weaponImg}
-                />
-            </View>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+        >
+            <View style={{ height: "100%" }}>
+                <View style={styles.mainView}>
+                    <View style={styles.imageView}>
+                        <Image
+                            source={{ uri: data.assets.image }}
+                            style={styles.weaponImg}
+                        />
+                    </View>
 
-            <Text style={styles.nameText}>{data.name}</Text>
-            <Image source={{ uri: data.assets.icon }} style={styles.iconImg} />
-            <View style={styles.statsView}>
-                <Text style={styles.damageLabel}>
-                    Damage:
-                    <Text style={styles.damageAmount}>
-                        {data.attack.display}D +{data.attack.raw}R
-                    </Text>
-                </Text>
-                <Text style={styles.damageLabel}>
-                    Damage Type:{" "}
-                    <Text style={styles.damageAmount}>
-                        {data.damageType.toUpperCase()}
-                    </Text>
-                </Text>
-                {data.elements
-                    ? data.elements.map((element) => (
-                          <Text key={data.id} style={styles.damageLabel}>
-                              Element Damage:
-                              <Text style={styles.damageAmount}>
-                                  {element.type.toUpperCase()}
-                                  {`(${element.damage})`}
-                              </Text>
-                          </Text>
-                      ))
-                    : null}
+                    <Text style={styles.nameText}>{data.name}</Text>
+                    <Image
+                        source={{ uri: data.assets.icon }}
+                        style={styles.iconImg}
+                    />
+                    <View style={styles.statsView}>
+                        <Text style={styles.damageLabel}>
+                            Damage:
+                            <Text style={styles.damageAmount}>
+                                {data.attack.display}D +{data.attack.raw}R
+                            </Text>
+                        </Text>
+                        <Text style={styles.damageLabel}>
+                            Damage Type:{" "}
+                            <Text style={styles.damageAmount}>
+                                {data.damageType.toUpperCase()}
+                            </Text>
+                        </Text>
+                        {data.elements
+                            ? data.elements.map((element) => (
+                                  <Text
+                                      key={data.id}
+                                      style={styles.damageLabel}
+                                  >
+                                      Element Damage:
+                                      <Text style={styles.damageAmount}>
+                                          {element.type.toUpperCase()}
+                                          {`(${element.damage})`}
+                                      </Text>
+                                  </Text>
+                              ))
+                            : null}
+                    </View>
+                </View>
             </View>
-        </View>
+        </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
     mainView: {
-        flex: 1,
         alignItems: "center",
     },
     weaponImg: {

@@ -1,22 +1,9 @@
-next steps: 
-fine tune design for weapons
-    weaponsDisplay needs a background img also weapon Details
-
-fine tune armor and ranks 
-    they both need a background img
-
-fine tune Ailments, background imgs and background color for description box 
-
-fine tune Charms, needs same changes as above
-
-fine tune Decorations, same steps as other two
-
+next steps
 
 Design and Finetune armor
 
-show
-IMG 
+IMG
 name
 skills in flatlist
-    skillName 
-    description
+skillName
+description
