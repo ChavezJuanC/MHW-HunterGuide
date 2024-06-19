@@ -77,7 +77,10 @@ export default function WeaponsDisplayScreen({ route, navigation }) {
     });
 
     return (
-        <ImageBackground source={require("../assets/categoryCards/gray-concrete-wall.jpg")}>
+        <ImageBackground
+            source={require("../assets/categoryCards/gray-concrete-wall.jpg")}
+            style={{ height: "100%" }}
+        >
             <FlatList
                 data={filteredData}
                 renderItem={({ item }) => (
